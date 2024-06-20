@@ -1,0 +1,71 @@
+.header{
+    background-image: url('../../assets/noom-peerapong-2uwFEAGUm6E-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer{
+    background-color: rgba(13, 37, 63, 0.8);
+    z-index: 0;
+}
+
+.search input {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 25px;
+}
+
+.search input::placeholder{
+    font-size:17px;
+}
+
+.search-btn{
+    background: rgb(144,206,161);
+background: linear-gradient(90deg, rgba(144,206,161,1) 0%, rgba(1,180,228,1) 40%);
+padding: 13px 25px;
+border: none ;
+}
+
+.oscar-section{
+    background: linear-gradient(174deg, rgba(42,41,152,1) 5%, rgba(106,143,192,1) 41%);
+}
+
+/* trending section start */
+.trending{
+    background-image: url('../../assets/trending.svg');
+    background-repeat: no-repeat;
+    background-position: 50% 120%;
+}
+.slider-btn{
+    background-color: transparent;
+    color: var(--Dark-blue);
+}
+.active-btn{
+    background-color: var(--Dark-blue);
+    color: var(--Light-green);
+}
+/* trending section start */
+
+/* Latest Trailers section start */
+.latest-trailers{
+    position: relative;
+    z-index: 1;
+    background-image: url("../../assets/video-cover.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: border-box;
+    background-attachment: fixed;
+}
+.latest-trailers .slider-btn{
+    color: #fff;
+}
+.latest-trailers .active-btn{
+    background: rgb(144,206,161);
+background: linear-gradient(90deg,rgb(237 240 241) -12% ,rgba(144,206,161,1) 40% );
+    color: var(--Dark-blue);
+}
+.latest-trailers .slider-btn-container{
+    border-color: var(--Light-green) !important;
+}
+/* Latest Trailers section end */

@@ -1,0 +1,50 @@
+nav {
+  z-index: 99999;
+}
+.navbar-brand,.text-mix-colors {
+  background: linear-gradient(
+    90deg,
+    rgba(144, 206, 161, 1) 11%,
+    rgba(1, 180, 228, 1) 86%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 0 !important;
+}
+
+.icon-user-profile {
+  background-color: #ea148c;
+  width: 35px;
+  height: 35px;
+  margin-right: 15px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.form-control:focus {
+  box-shadow: none;
+}
+
+#search_input {
+  top: 0;
+  z-index: 999;
+  transition: all 0.5s;
+}
+
+.navbar-toggler-icon {
+  background-image: url("../../../assets/icons8-menu-50.png");
+}
+
+@media screen and (max-width: 992px) {
+  .section1 {
+    width: 90%;
+    padding-left: 30px;
+    padding-right: 0px;
+  }
+  #search_btn,#close_btn {
+    margin-right: 40px;
+  }
+  
+}
