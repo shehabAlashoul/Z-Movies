@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react";
 import "./Home.css";
 import oscar from "../../assets/oscars.svg";
-import MainSlider from "Components/ui/Slider/Slider";
-import SliderVideoSection from "Components/ui/Slider/SliderVideoSection";
-import { moviesContext } from "context/MoviesContext";
-import Loading from "Components/ui/Loading/Loading";
-import { TVContext } from "context/TVContext";
-import { PeopleContext } from "context/PeopleContext";
+import MainSlider from "../ui/Slider/Slider";
+import SliderVideoSection from "../ui/Slider/SliderVideoSection";
+import { moviesContext } from "../../context/MoviesContext";
+import Loading from "../ui/Loading/Loading";
+import { TVContext } from "../../context/TVContext";
+import { PeopleContext } from "../../context/PeopleContext";
 
 function Home() {
   const { trendingMovies, getTrendingMovies, Lodaing:loadingMovies } =
