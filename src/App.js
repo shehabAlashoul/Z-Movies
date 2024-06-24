@@ -1,4 +1,4 @@
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';
 import './App.css';
 import Layout from 'Components/Layout/Layout.jsx';
 import Home from 'Components/Home/Home.jsx';
@@ -11,7 +11,7 @@ import TVProvider from 'context/TVContext';
 import PeopleProvider from 'context/PeopleContext';
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createHashRouter([
     {path:'/',element:<Layout/>,children:[
       {index:true,element:<Home/>},
       {path:'movies/popular',element:<Popular/>},
