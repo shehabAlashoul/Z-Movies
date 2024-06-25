@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Slider from "react-slick";
 import './Slider.css'
-import video_cover from "../../../assets/video-cover.webp"
 import video_cover2 from "../../../assets/video-cover2.webp"
 import { Link } from "react-router-dom";
 

@@ -1,35 +1,35 @@
-.percentile-rating{
-    padding: 10px 7px;
-    top: 90%;
-    left: 7%;
-    font-size: 13px;
-    font-weight: bolder;
+.percentile-rating {
+  padding: 10px 7px;
+  top: 90%;
+  left: 7%;
+  font-size: 13px;
+  font-weight: bolder;
 }
 
-.percentile-rating span{
-    font-size: xx-small;
-    position: relative;
-    top: -5px;
+.percentile-rating span {
+  font-size: xx-small;
+  position: relative;
+  top: -5px;
 }
 
-.data-container .slick-next:before {
-    color: var(--Dark-blue) !important;
+.slick-next:before {
+  color: var(--Dark-blue) !important;
 }
-.data-container .slick-prev:before{
-    color: var(--Dark-blue) !important;
+.slick-prev:before {
+  color: var(--Dark-blue) !important;
 }
-
 
 /* slider for trailer video */
-.slick-slide{
-    padding: 10px 10px;
+.slick-slide {
+  padding: 10px 10px;
 }
-.trailer-content img,.trailer-content i{
-    transition: all 0.7s;
+.trailer-content img,
+.trailer-content i {
+  transition: all 0.7s;
 }
-.trailer-content:hover img{
-    transform: scale(108%);
+.trailer-content:hover img {
+  transform: scale(108%);
 }
-.trailer-content:hover i{
-    transform: scale(108%);
+.trailer-content:hover i {
+  transform: scale(108%);
 }

@@ -7,28 +7,40 @@ import { moviesContext } from "../../context/MoviesContext";
 import Loading from "../ui/Loading/Loading";
 import { TVContext } from "../../context/TVContext";
 import { PeopleContext } from "../../context/PeopleContext";
+import Placeholder from "../ui/Placeholder/Placeholder";
 
 function Home() {
-  const { trendingMovies, getTrendingMovies, Lodaing:loadingMovies } =
-    useContext(moviesContext);
-    const {Loading:loadingTV,getTrendingTV,TrendingTV}= useContext(TVContext)
-    const {Loading:loadingPeople,getPopularPeople,PopularPeople}= useContext(PeopleContext)
+  const {
+    trendingMovies,
+    getTrendingMovies,
+    Lodaing: loadingMovies,
+  } = useContext(moviesContext);
+  const {
+    Loading: loadingTV,
+    getTrendingTV,
+    TrendingTV,
+  } = useContext(TVContext);
+  const {
+    Loading: loadingPeople,
+    getPopularPeople,
+    PopularPeople,
+  } = useContext(PeopleContext);
   const slider_btn = document.getElementsByClassName("slider-btn");
-// handel request for trending movies
+  // handel request for trending movies
   useEffect(() => {
     if (trendingMovies !== null) return;
     getTrendingMovies();
   }, [getTrendingMovies, trendingMovies]);
-// handel request for trending TV
-useEffect(()=>{
-  if (TrendingTV !== null) return
-  getTrendingTV()
-},[TrendingTV,getTrendingTV])
-// handel request for popular people
-useEffect(()=>{
-  if (PopularPeople !== null) return
-  getPopularPeople()
-},[PopularPeople,getPopularPeople])
+  // handel request for trending TV
+  useEffect(() => {
+    if (TrendingTV !== null) return;
+    getTrendingTV();
+  }, [TrendingTV, getTrendingTV]);
+  // handel request for popular people
+  useEffect(() => {
+    if (PopularPeople !== null) return;
+    getPopularPeople();
+  }, [PopularPeople, getPopularPeople]);
 
   // handel event to slider btn
   useEffect(() => {
@@ -53,6 +65,7 @@ useEffect(()=>{
   }, [slider_btn]);
   return (
     <>
+      {loadingMovies || loadingPeople || loadingTV ? <Loading /> : <></>}
       <div className="d-inline-block text-center bg-dark-blue text-dark-emphasis w-100 pt-2 pb-2">
         <h1 className="fw-bold">Z-Movies</h1>
       </div>
@@ -111,7 +124,11 @@ useEffect(()=>{
           </div>
         </div>
         <div>
-          {loadingMovies ? <Loading /> : <MainSlider data={trendingMovies} />}
+          {loadingMovies ? (
+            <Placeholder />
+          ) : (
+            <MainSlider data={trendingMovies} isLoading={loadingMovies} />
+          )}
         </div>
       </section>
       {/* trending section end */}
@@ -150,20 +167,30 @@ useEffect(()=>{
         <div className="d-flex align-items-center column-gap-3 mb-4">
           <h2 className="fs-4">Trending TV</h2>
           <div className="overflow-hidden bg-transparent border border-1 border-dark rounded-5 d-flex fw-semibold">
-            <div onClick={() => {
+            <div
+              onClick={() => {
                 getTrendingTV("day");
-              }} className="slider-btn p-1 rounded-5 ps-4 pe-4 active-btn pointer">
+              }}
+              className="slider-btn p-1 rounded-5 ps-4 pe-4 active-btn pointer"
+            >
               Today
             </div>
-            <div onClick={() => {
+            <div
+              onClick={() => {
                 getTrendingTV("week");
-              }} className="slider-btn p-1 rounded-5 ps-4 pe-4 pointer">
+              }}
+              className="slider-btn p-1 rounded-5 ps-4 pe-4 pointer"
+            >
               This Week
             </div>
           </div>
         </div>
         <div>
-        {loadingTV ? <Loading /> : <MainSlider data={TrendingTV} />}
+          {loadingTV ? (
+            <Placeholder />
+          ) : (
+            <MainSlider data={TrendingTV} isLoading={loadingTV} />
+          )}
         </div>
       </section>
       {/* What's Popular section end */}
@@ -172,18 +199,30 @@ useEffect(()=>{
         <div className="d-flex align-items-center column-gap-3 mb-4">
           <h2 className="fs-4">Free To Watch</h2>
           <div className="overflow-hidden bg-transparent border border-1 border-dark rounded-5 d-flex fw-semibold">
-            <div onClick={() => {
+            <div
+              onClick={() => {
                 getPopularPeople("day");
-              }} className="slider-btn p-1 rounded-5 ps-4 pe-4 active-btn pointer">
+              }}
+              className="slider-btn p-1 rounded-5 ps-4 pe-4 active-btn pointer"
+            >
               Today
             </div>
-            <div onClick={() => {
+            <div
+              onClick={() => {
                 getPopularPeople("week");
-              }} className="slider-btn p-1 rounded-5 ps-4 pe-4 pointer">This Week</div>
+              }}
+              className="slider-btn p-1 rounded-5 ps-4 pe-4 pointer"
+            >
+              This Week
+            </div>
           </div>
         </div>
         <div>
-        {loadingPeople ? <Loading /> : <MainSlider data={PopularPeople} />}
+          {loadingPeople ? (
+            <Placeholder />
+          ) : (
+            <MainSlider data={PopularPeople} isLoading={loadingPeople} />
+          )}
         </div>
       </section>
       {/* Free To Watch section end */}
